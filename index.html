@@ -394,7 +394,7 @@ function renderQuestions(){
 
 /* ========= ESTADO ========= */
 let patient=null, tokenRow=null, CPF="";
-const STORAGE_KEY = `VINELAND3_ENTREVISTA_${qs("token")||"anon"}`;
+const STORAGE_KEY = `VINELAND3_PAIS_${qs("token")||"anon"}`;
 let startAt = Date.now();
 
 /* ========= BOOT ========= */
@@ -629,11 +629,9 @@ $("#form").addEventListener("submit", async (e)=>{
       submitted_at: new Date().toISOString(),
       total: total,
       categoria: categoria_csv,
-      questions: JSON.stringify(qaList), // <- perguntas+respostas
-      metrics: JSON.stringify({
-        answers: answersMap,
-        duration_sec: durationSec
-      })
+      questions: "",
+      metrics: "",
+    
     });
 
     // marca como feito
